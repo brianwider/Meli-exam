@@ -8,9 +8,7 @@ export default class HeaderAppBar extends React.Component {
                         className="nav-logo"
                         href="//www.mercadolibre.com.ar"
                         tabIndex={1}
-                    >
-                        Mercado Libre Argentina - Donde comprar y vender de todo
-                    </a>
+                    />
                     <form
                         className="nav-search"
                         action="https://www.mercadolibre.com.ar/jm/search"
