@@ -1,42 +1,31 @@
-var webpack = require('webpack');
-var path = require('path');
-
-var BUILD_DIR = path.resolve(__dirname, './build');
-var APP_DIR = path.resolve(__dirname, './src/client');
-
-const config = {
-   entry: {
-     main: APP_DIR + '/index.js'
-   },
-   output: {
-     filename: 'bundle.js',
-     path: BUILD_DIR,
-   },
-   module: {
-    rules: [
-     {
-       test: /(\.css|.scss)$/,
-       use: [{
-           loader: "style-loader" // creates style nodes from JS strings
-       }, {
-           loader: "css-loader" // translates CSS into CommonJS
-       }, {
-           loader: "sass-loader" // compiles Sass to CSS
-       }]
-     },
-     {
-       test: /\.(jsx|js)?$/,
-       use: [{
-         loader: "babel-loader",
-         options: {
-           cacheDirectory: true,
-           presets: ['react', 'es2015'] // Transpiles JSX and ES6
-         }
-       }]
-     }
-    ],
-
-  }
+var path = require("path");
+module.exports = {
+    entry: "./src/app.js",
+    mode: "development",
+    output: {
+        path: path.join(__dirname, "public"),
+        filename: "bundle.js" // this is the compiled final javascript file which we will include in the index.html
+    },
+    module: {
+        rules: [
+            {
+                loader: "babel-loader",
+                test: /\.(jsx|js)?$/,
+                exclude: /node_modules/
+            },
+            {
+                test: /(\.css|.scss)$/,
+                use: ["style-loader", "css-loader", "sass-loader"]
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: ["file-loader"]
+            }
+        ]
+    },
+    devtool: false,
+    devServer: {
+        contentBase: path.join(__dirname, "public"),
+        historyApiFallback: true // this prevents the default browser full page refresh on form submission and link change
+    }
 };
-
-module.exports = config;
