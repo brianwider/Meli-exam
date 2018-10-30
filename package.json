@@ -5,10 +5,12 @@
     "description": "Meli React exam",
     "main": "index.js",
     "homepage": "https://github.com/brianwider/Meli-exam#readme",
+    "proxy": "http://localhost:5000/",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "webpack",
-        "dev-server": "webpack-dev-server --port 3000"
+        "dev-server": "webpack-dev-server --port 3000",
+        "start": "nodemon server.js"
     },
     "repository": {
         "type": "git",
@@ -22,6 +24,7 @@
         "babel-preset-env": "^1.7.0",
         "babel-preset-react": "^6.24.1",
         "css-loader": "^1.0.1",
+        "express": "^4.16.4",
         "material-ui": "^0.20.2",
         "node-sass": "^4.9.4",
         "react": "^16.6.0",

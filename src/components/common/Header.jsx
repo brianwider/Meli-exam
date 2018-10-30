@@ -4,11 +4,7 @@ export default class HeaderAppBar extends React.Component {
         return (
             <div className="header">
                 <div className="nav-bounds">
-                    <a
-                        className="nav-logo"
-                        href="//www.mercadolibre.com.ar"
-                        tabIndex={1}
-                    />
+                    <a className="nav-logo" href="/" tabIndex={1} />
                     <form
                         className="nav-search"
                         action="https://www.mercadolibre.com.ar/jm/search"
