@@ -4,13 +4,18 @@ $color_3: rgba(0, 0, 0, 0.25);
 $font_family_1: "Proxima Nova", -apple-system, "Helvetica Neue", Helvetica,
     Roboto, Arial, sans-serif, sans-serif;
 $font_family_2: inherit;
-$background_color_1: #fff;
-$background_color_2: #fff159;
+$background_gray: #eeeeee;
+$primary: #ffe600;
+$secondary: #3483fa;
+$success: #5cb85c;
 $background_color_3: rgba(255, 255, 255, 0.7);
 $background_color_4: #f7f7f7;
 
 // Imports
-@import "header";
+@import "../../node_modules/bootstrap-4-grid/scss/grid";
+@import "components/header";
+@import "resultsPage";
+@import "detailsPage";
 
 // Common styles
 body {
@@ -19,7 +24,7 @@ body {
     padding: 0;
     width: 100%;
     font-size: 13px;
-    background-color: $background_color_1;
+    background-color: $background_gray;
     border-collapse: collapse;
     display: table;
     font-family: $font_family_1;
@@ -31,5 +36,13 @@ html {
     padding: 0;
     width: 100%;
     font-size: 13px;
-    background-color: $background_color_1;
+    background-color: $background_gray;
+}
+
+.loading-container {
+    text-align: center;
+    .loading-icon {
+        padding: 48px 0;
+        margin: 0 auto;
+    }
 }

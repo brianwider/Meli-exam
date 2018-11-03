@@ -10,8 +10,8 @@ const AppRouter = () => (
             <Header />
             <Switch>
                 <Route path="/" component={HomePage} exact={true} />
-                <Route path="/results" component={ResultsPage} />
-                <Route path="/detail" component={DetailsPage} />
+                <Route path="/items" exact component={ResultsPage} />
+                <Route path="/items/:id" component={DetailsPage} />
             </Switch>
         </div>
     </BrowserRouter>

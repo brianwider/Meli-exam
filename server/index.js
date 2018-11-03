@@ -9,13 +9,14 @@ const port = 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use("/static", express.static("public"));
+app.use("/images", express.static("src/assets"));
 app.use(middleware(compiler, {}));
 
 require("./api/routes")(app, {});
 
 app.get("/*", (req, res) => {
-    res.sendFile(__dirname + "/public/index.html");
+    res.sendFile(webpackOptions.output.path + "/index.html");
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
