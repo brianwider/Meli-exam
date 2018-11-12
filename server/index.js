@@ -2,10 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const webpack = require("webpack");
 const middleware = require("webpack-dev-middleware");
-if (process.env.NODE_ENV !== "production") {
-    console.log("Looks like we are in development mode!");
-}
-const webpackOptions = require("../webpack-dev.config.js");
+const webpackOptions = require("../webpack.config.js");
 const compiler = webpack(webpackOptions);
 const app = express();
 const port = 3000;
